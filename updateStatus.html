@@ -1,0 +1,108 @@
+<html>
+  <head>
+    <base target="_top">
+  </head>
+  <body>
+  </body>
+
+  <script>
+      function setSelectList(spaceList) {
+      var ownform = document.createElement("form");
+      document.body.appendChild(ownform);
+      ownform.id = 'form_project';
+      var lstLabel = document.createElement('label');
+      lstLabel.htmlFor = 'mySelect';
+      lstLabel.innerHTML = "Status corresponds to 'Passed': ";
+      ownform.appendChild(lstLabel);
+      var selectList = document.createElement("SELECT");
+      selectList.id = "mySelect";
+      selectList.name = "mySelect";
+      ownform.appendChild(selectList);
+      var br = document.createElement('br');
+      ownform.appendChild(br);
+      var br_2 = document.createElement('br');
+      ownform.appendChild(br_2);
+      var idx = 0;
+      while (idx < spaceList.length) {
+        var option = document.createElement("option");
+        option.value = spaceList[idx];
+        option.text = spaceList[idx];
+        selectList.add(option);
+        ++idx;
+      }
+
+      var lstLabel_2 = document.createElement('label');
+      lstLabel_2.htmlFor = 'mySelect_2';
+      lstLabel_2.innerHTML = "Status corresponds to 'Blocked': ";
+      ownform.appendChild(lstLabel_2);
+      var selectList_2 = document.createElement("SELECT");
+      selectList_2.id = "mySelect_2";
+      selectList_2.name = "mySelect_2";
+      ownform.appendChild(selectList_2);
+      var br_3 = document.createElement('br');
+      ownform.appendChild(br_3);
+      var br_4 = document.createElement('br');
+      ownform.appendChild(br_4);
+      var idx_2 = 0;
+      while (idx_2 < spaceList.length) {
+        var option = document.createElement("option");
+        option.value = spaceList[idx_2];
+        option.text = spaceList[idx_2];
+        selectList_2.add(option);
+        ++idx_2;
+      }
+
+      var lstLabel_3 = document.createElement('label');
+      lstLabel_3.htmlFor = 'mySelect_3';
+      lstLabel_3.innerHTML = "Status corresponds to 'Failed': ";
+      ownform.appendChild(lstLabel_3);
+      var selectList_3 = document.createElement("SELECT");
+      selectList_3.id = "mySelect_3";
+      selectList_3.name = "mySelect_3";
+      ownform.appendChild(selectList_3);
+      var br_5 = document.createElement('br');
+      ownform.appendChild(br_5);
+      var br_6 = document.createElement('br');
+      ownform.appendChild(br_6);
+      var idx_3 = 0;
+      while (idx_3 < spaceList.length) {
+        var option = document.createElement("option");
+        option.value = spaceList[idx_3];
+        option.text = spaceList[idx_3];
+        selectList_3.add(option);
+        ++idx_3;
+      }
+
+      var br2 = document.createElement('br');
+      var firstRowLabel = document.createElement('label');
+      firstRowLabel.htmlFor = 'firstRow';
+      firstRowLabel.innerHTML = "Start Row Number: ";
+      ownform.appendChild(firstRowLabel);
+      var br4 = document.createElement('br');
+      ownform.appendChild(br4);
+      var firstRowBox = document.createElement('input');
+      firstRowBox.type = 'text';
+      firstRowBox.id = 'firstRow';
+      firstRowBox.name = 'firstRow';
+      ownform.appendChild(firstRowBox);
+      ownform.appendChild(br2);
+      var lastRowLabel = document.createElement('label');
+      lastRowLabel.htmlFor = 'lastRow';
+      lastRowLabel.innerHTML = "Ending Row Number: ";
+      ownform.appendChild(lastRowLabel);
+      var lastRowBox = document.createElement('input');
+      lastRowBox.type = 'text';
+      lastRowBox.id = 'lastRow';
+      lastRowBox.name = 'lastRow';
+      ownform.appendChild(lastRowBox);
+      var br3 = document.createElement('br');
+      ownform.appendChild(br3);
+      var btn = document.createElement("input");
+      btn.type = 'submit';
+      btn.value = 'Next';
+      ownform.appendChild(btn);
+      ownform.setAttribute('onsubmit', "google.script.run.updateStatus(this); google.script.host.close()");
+    }  
+    google.script.run.withSuccessHandler(setSelectList).chooseSta();
+    </script>
+</html>

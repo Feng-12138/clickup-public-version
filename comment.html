@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <base target="_top">
+  </head>
+  <body>
+    <h1> Set the starting and ending row(number) </h1>
+    <form id='row info' onsubmit="google.script.run.updateComments(this); google.script.host.close()">
+      <label for="firstRow">Starting Row Number(included): </label>
+      <input type="text" id="firstRow" name="firstRow" value = ''><br><br>
+      <label for="secondRow">Ending Row Number(included): </label>
+      <input type= "text" id="secondRow" name='secondRow' value=''><br><br>
+      <input type="submit" value="Done">
+    </form>
+  </body>
+</html>

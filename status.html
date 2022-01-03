@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <base target="_top">
+  </head>
+  <body>
+  </body>
+    <script>
+      function setSelectList(spaceList) {
+      var ownform = document.createElement("form");
+      document.body.appendChild(ownform);
+      ownform.id = 'form_project';
+      var lstLabel = document.createElement('label');
+      lstLabel.htmlFor = 'mySelect';
+      lstLabel.innerHTML = 'New Status: ';
+      ownform.appendChild(lstLabel);
+      var selectList = document.createElement("SELECT");
+      selectList.id = "mySelect";
+      selectList.name = "mySelect";
+      ownform.appendChild(selectList);
+      var br = document.createElement('br');
+      ownform.appendChild(br);
+      var idx = 0;
+      while (idx < spaceList.length) {
+        var option = document.createElement("option");
+        option.value = spaceList[idx];
+        option.text = spaceList[idx];
+        selectList.add(option);
+        ++idx;
+      }
+      var br2 = document.createElement('br');
+      var firstRowLabel = document.createElement('label');
+      firstRowLabel.htmlFor = 'firstRow';
+      firstRowLabel.innerHTML = "Start Row Number: ";
+      ownform.appendChild(firstRowLabel);
+      var br4 = document.createElement('br');
+      ownform.appendChild(br4);
+      var firstRowBox = document.createElement('input');
+      firstRowBox.type = 'text';
+      firstRowBox.id = 'firstRow';
+      firstRowBox.name = 'firstRow';
+      ownform.appendChild(firstRowBox);
+      ownform.appendChild(br2);
+      var lastRowLabel = document.createElement('label');
+      lastRowLabel.htmlFor = 'lastRow';
+      lastRowLabel.innerHTML = "Ending Row Number: ";
+      ownform.appendChild(lastRowLabel);
+      var lastRowBox = document.createElement('input');
+      lastRowBox.type = 'text';
+      lastRowBox.id = 'lastRow';
+      lastRowBox.name = 'lastRow';
+      ownform.appendChild(lastRowBox);
+      var br3 = document.createElement('br');
+      ownform.appendChild(br3);
+      var btn = document.createElement("input");
+      btn.type = 'submit';
+      btn.value = 'Next';
+      ownform.appendChild(btn);
+      ownform.setAttribute('onsubmit', "google.script.run.wrapperCheckStatus(this); google.script.host.close()");
+    }  
+    google.script.run.withSuccessHandler(setSelectList).chooseSta();
+    </script>
+</html>

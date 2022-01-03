@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <base target="_top">
+  </head>
+  <body id="output">
+  </body>
+  <script>
+    function setSelectList(spaceList) {
+      var ownform = document.createElement("form");
+      document.body.appendChild(ownform);
+      ownform.id = 'form_project';
+      var selectList = document.createElement("SELECT");
+      selectList.id = "mySelect";
+      selectList.name = "mySelect";
+      ownform.appendChild(selectList);
+      var idx = 0;
+      while (idx < spaceList.length) {
+        var option = document.createElement("option");
+        option.value = spaceList[idx];
+        option.text = spaceList[idx];
+        selectList.add(option);
+        ++idx;
+      }
+      var btn = document.createElement("input");
+      btn.type = 'submit';
+      btn.value = 'Next';
+      ownform.appendChild(btn);
+      ownform.setAttribute('onsubmit', "google.script.run.lstOpenDialogue(this); google.script.host.close()");
+    }  
+    google.script.run.withSuccessHandler(setSelectList).chooseSpace();
+  </script>
+</html>
+
