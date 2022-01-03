@@ -241,30 +241,6 @@ function deleteAPIKey() {
   
   
   
-  // function openDialogForFolderUrlInput(apiKey) {
-  //   var ui = SpreadsheetApp.getUi();
-  //   var response = ui.prompt('Please Enter Project Details', 'What is the URL for the Folder you want stories from?', ui.ButtonSet.OK_CANCEL);
-  //   if (response.getSelectedButton() == ui.Button.OK) {
-  //     const folderURL = response.getResponseText()
-  //     Logger.log('The user\'s FOLDER URL is is %s.', folderURL);
-  //     openDialogForColumnNameToImportFrom(apiKey, folderURL)
-  //   } else {
-  //     Logger.log('The user clicked the close button in the dialog\'s title bar.');
-  //   }
-  // };
-  // function openDialogForColumnNameToImportFrom(apiKey, folderURL) {
-  //   var ui = SpreadsheetApp.getUi();
-  //   var response = ui.prompt('Please Enter Sprint Details', 'What is the name of the Column you want stories from?', ui.ButtonSet.OK_CANCEL);
-  //   if (response.getSelectedButton() == ui.Button.OK) {
-  //     const folderName = response.getResponseText()
-  //     Logger.log('The user\'s FOLDER URL is is %s.', folderURL);
-  //     // open folder function and pass api key to that
-  //     Logger.log(importClickup(apiKey, folderURL, folderName))
-  //   } else {
-  //     Logger.log('The user clicked the close button in the dialog\'s title bar.');
-  //   }
-  // };
-  
   
   
   
