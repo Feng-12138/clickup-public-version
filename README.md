@@ -83,3 +83,6 @@ Mode of Add tickets(select the button)
 
 5. Help
 User will be guided to github readme file for instructions
+
+Current completed: Add tickets(two ways), update ticket status, add comments to tickets, setting and setting related notifications
+Left to do: rewrite readMe, Help
